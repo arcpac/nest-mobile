@@ -49,7 +49,6 @@ type TabsParamList = {
   expenses: { groupId?: string; groupName?: string };
 };
 
-// TODO: remove the groupId filter in expenseShare in this page. No filter will be done here. This page should show all expenseShare return by the web
 export default function ExpensesScreen() {
   const navigation =
     useNavigation<BottomTabNavigationProp<TabsParamList, "expenses">>();

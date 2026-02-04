@@ -101,23 +101,19 @@ export default function AddExpenseModal() {
     );
 
     const members = data?.group?.members ?? [];
-
-    // form state
     const [title, setTitle] = useState("");
     const [amountText, setAmountText] = useState("");
     const [description, setDescription] = useState("");
 
-    // default: select ALL members (common for equal split)
     const [selectedMemberIds, setSelectedMemberIds] = useState<Set<string>>(
         () => new Set()
     );
 
-    // when members load the first time, preselect all (simple approach)
+
     useEffect(() => {
         if (members.length && selectedMemberIds.size === 0) {
             setSelectedMemberIds(new Set(members.map((m) => m.id)));
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [members.length]);
 
     const toggleMember = useCallback((memberId: string) => {

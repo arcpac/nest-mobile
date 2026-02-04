@@ -26,8 +26,8 @@ export type GqlMember = {
   first_name: string | null;
   last_name: string | null;
   email: string;
-  joined_at: string; // DateTime comes over the wire as ISO string
-  user: GqlUser | null; // you defined user: User (nullable in your typeDefs)
+  joined_at: string;
+  user: GqlUser | null;
 };
 
 export type GqlGroup = {
@@ -35,7 +35,7 @@ export type GqlGroup = {
   name: string;
   active: boolean;
   created_by: string;
-  created_at: string; // DateTime => string
+  created_at: string;
   members: GqlMember[];
 };
 

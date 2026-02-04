@@ -88,7 +88,7 @@ function filterExpenseShares(
     const list = expenseShares ?? [];
     if (filter === "All") return list;
     if (filter === "Paid") return list.filter((x) => x.isPaid);
-    return list.filter((x) => !x.isPaid); // "Unpaid"
+    return list.filter((x) => !x.isPaid);
 }
 
 export default function GroupExpensesScreen() {
@@ -272,7 +272,7 @@ export default function GroupExpensesScreen() {
                                 key={ft}
                                 onPress={() => {
                                     setFilter(ft);
-                                    setSelectedExpenseIds(new Set()); // optional: clear selection on filter change
+                                    setSelectedExpenseIds(new Set());
                                 }}
                                 style={[styles.statusChip, ft === filter && styles.statusChipActive]}
                             >
